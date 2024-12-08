@@ -35,7 +35,7 @@ jobs:
         # Ensure the test-results directory exists
         mkdir -p test-results
         # Run pytest and save results to test-results/results.xml
-        pytest korok_guide_seeds/Tests/ --junitxml=test-results/results.xml || true
+        pytest korok_seed_guide/Tests/ --junitxml=test-results/results.xml || true
 
     - name: Upload test results
       if: always()  # Always try to upload results, even if tests fail
