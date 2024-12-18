@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Py-Spy Profiling
         run: |
-          py-spy record -o py_spy_profile.svg -- python your_script.py
+          py-spy record -o py_spy_profile.svg -- python test_credits.py
         # Replace 'your_script.py' with the entry point of your application
 
       - name: Upload Py-Spy Profile
