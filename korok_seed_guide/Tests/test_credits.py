@@ -1,4 +1,5 @@
 # test_credits.py
+
 import pytest
 from credits import Credits
 
@@ -15,6 +16,12 @@ def test_add_credits():
     
     credit_system.add_credits(50)
     assert credit_system.get_balance() == 150  # After adding 50, balance should be 150.
+
+# Test adding zero credits to the balance
+def test_add_zero_credits():
+    credit_system = Credits()
+    credit_system.add_credits(0)  # Add zero credits
+    assert credit_system.get_balance() == 0  # Balance should remain unchanged.
 
 # Test deducting credits from the balance (successful case)
 def test_deduct_credits_success():
@@ -38,4 +45,3 @@ def test_deduct_credits_no_balance():
     result = credit_system.deduct_credits(10)  # Attempt to deduct when no credits are present
     assert result is False  # The deduction should fail
     assert credit_system.get_balance() == 0  # Balance should still be 0.
-
