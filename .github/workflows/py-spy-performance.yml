@@ -24,4 +24,18 @@ jobs:
       # Step 3: Install Py-Spy
       - name: Install Py-Spy
         run: |
-          python -m pip install
+          python -m pip install --upgrade pip
+          pip install py-spy
+
+      # Step 4: Run Py-Spy Profiling
+      - name: Run Py-Spy Profiling
+        run: |
+          py-spy record -o pyspy_profile.svg -- python test_credits.py
+        # Replace 'test_credits.py' with the name of the Python script you want to profile
+
+      # Step 5: Upload Py-Spy Report
+      - name: Upload Py-Spy Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: py-spy-profile
+          path: pyspy_profile.svg
