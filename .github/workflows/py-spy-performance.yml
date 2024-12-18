@@ -30,8 +30,9 @@ jobs:
       # Step 4: Run Py-Spy Profiling
       - name: Run Py-Spy Profiling
         run: |
-          py-spy record -o pyspy_profile.svg -- python test_credits.py
-        # Replace 'test_credits.py' with the name of the Python script you want to profile
+          py-spy record -o pyspy_profile.svg -- python Tests/test_credits.py
+        # Ensure the path to 'test_credits.py' is correct relative to the repository root.
+        # Adjust 'Tests/test_credits.py' if the script is located elsewhere.
 
       # Step 5: Upload Py-Spy Report
       - name: Upload Py-Spy Report
