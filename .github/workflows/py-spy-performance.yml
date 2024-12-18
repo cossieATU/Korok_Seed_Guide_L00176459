@@ -34,7 +34,7 @@ jobs:
       # Step 5: Run Py-Spy Profiling
       - name: Run Py-Spy Profiling
         run: |
-          py-spy record -o pyspy_profile.svg -- python <correct-path-to-test_credits.py>
+          py-spy record -o pyspy_profile.svg -- python korok_seed_guide/Tests/test_credits.py
 
       # Step 6: Upload Py-Spy Report
       - name: Upload Py-Spy Report
